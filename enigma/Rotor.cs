@@ -8,5 +8,11 @@ namespace enigma
 {
     class Rotor : Correspondencia
     {
+        public Rotor(Aplicacion ap): base(ap) { }
+    }
+
+    public void Rotar()
+    {
+
     }
 }

@@ -8,5 +8,6 @@ namespace enigma
 {
     class Plugboard : Correspondencia
     {
+        public Plugboard(Aplicacion ap): base(ap){}
     }
 }

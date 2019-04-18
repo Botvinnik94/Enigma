@@ -8,5 +8,21 @@ namespace enigma
 {
     class Correspondencia
     {
+        Aplicacion aplicacion;
+        //TODO manejo de eventos
+        public Correspondencia( Aplicacion ap)
+        {
+            aplicacion = ap;
+        }
+
+        char encriptar (char entrada)
+        {
+            return aplicacion.Encriptar(entrada);
+        }
+
+        public Aplicacion GetAplicacion()
+        {
+            return aplicacion;
+        }
     }
 }
