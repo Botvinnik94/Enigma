@@ -6,13 +6,44 @@ using System.Threading.Tasks;
 
 namespace enigma
 {
-    class Rotor : Correspondencia
+    public class Rotor : Correspondencia
     {
-        public Rotor(Aplicacion ap): base(ap) { }
+        public delegate void AvisoCicloCompletoEventHandler(object sender, EventArgs e);
+
+        public event AvisoCicloCompletoEventHandler AvisoCicloCompleto;
+
+        public Rotor(Aplicacion ap): base(ap) {
+            ap.CicloCompleto += EventoCicloCompleto;//Suscripción al evento
+        }
+
+        public void Rotar()
+        {
+            aplicacion.Rotar();
+        }
+
+        public char Encriptar(char input)
+        {
+            return aplicacion.Encriptar(input);
+        }
+
+        public void ChangeOffset(int offset)
+        {
+            aplicacion.offset = offset;
+        }
+
+        private void EventoCicloCompleto(object sender, EventArgs e)
+        {
+            OnAvisoCicloCompleto();
+        }
+
+        protected virtual void OnAvisoCicloCompleto()
+        {
+            if (AvisoCicloCompleto != null)
+            {
+                AvisoCicloCompleto(this, new EventArgs());
+            }
+        }
     }
 
-    public void Rotar()
-    {
 
-    }
 }

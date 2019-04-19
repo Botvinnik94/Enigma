@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace enigma
 {
-    class Correspondencia
+    public class Correspondencia
     {
-        Aplicacion aplicacion;
+        protected Aplicacion aplicacion;
         //TODO manejo de eventos
         public Correspondencia( Aplicacion ap)
         {
@@ -18,11 +18,6 @@ namespace enigma
         char encriptar (char entrada)
         {
             return aplicacion.Encriptar(entrada);
-        }
-
-        public Aplicacion GetAplicacion()
-        {
-            return aplicacion;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace enigma
 {
-    class Plugboard : Correspondencia
+    public class Plugboard : Correspondencia
     {
         public Plugboard(Aplicacion ap): base(ap){}
     }

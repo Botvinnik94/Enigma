@@ -16,6 +16,12 @@ namespace enigma
         public Socket(Rotor[] r, Plugboard p)
         {
             Rotores = r;
+
+            foreach(Rotor rotor in Rotores)
+            {
+                rotor.AvisoCicloCompleto += EventoCicloCompleto;//Suscripción a evento por cada uno de los rotores
+            }
+
             Plugboard = p;
             Log = new Log();
         }
@@ -83,6 +89,11 @@ namespace enigma
             Log.Entries.Add($"{temp} -> Plugboard -> {c}");
             Log.Entries.Add($"Output: {c}");
             return c;
+        }
+
+        private void EventoCicloCompleto(object sender, EventArgs e)
+        {
+            //TODO acción a realizar cuando llegue el evento
         }
     }
 }

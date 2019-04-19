@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace enigma
 {
-    class Aplicacion
+    public class Aplicacion
     {
-        public const string abecedario = "abcdefghijklmnñopqrstuvwxyz";
-        public const int limiteLetras = 26;
-        char[] input;
-        char[] output;
+        public delegate void CicloCompletoEventHandler(object sender, EventArgs e);
+
+        const string abecedario = "abcdefghijklmnñopqrstuvwxyz";
+        const int limiteLetras = 26;
+        protected char[] input;
+        public char[] output;
         public int offset
         {
             get { return offset; }
@@ -21,7 +23,7 @@ namespace enigma
             }
         }
 
-        //TODO manejo de eventos
+        public event CicloCompletoEventHandler CicloCompleto;
 
         //Constructor para los rotores
         public Aplicacion(char[] salida, int offset)
@@ -51,7 +53,7 @@ namespace enigma
             //Finalmente el ultimo elemento pasa a ser el primero por la rotacion
 
             char temp = output[output.Length-1];
-            for(int i = output.Length - 1; i > 0; i++)
+            for(int i = output.Length - 1; i > 0; i--)
             {
                 output[i] = output[i - 1];
             }
@@ -60,7 +62,7 @@ namespace enigma
             offset++;
             if (offset == limiteLetras)
             {
-                //MANDAR SEÑAL DEL EVENTO
+                OnCicloCompleto(); //Mandamos la señal para avisar de que se ha rotado hasta la ulima posicion
             }
 
         }
@@ -86,6 +88,14 @@ namespace enigma
             }
 
             return '';
+        }
+
+        protected virtual void OnCicloCompleto()
+        {
+            if (CicloCompleto != null)
+            {
+                CicloCompleto(this, new EventArgs());
+            }
         }
     }
 }
