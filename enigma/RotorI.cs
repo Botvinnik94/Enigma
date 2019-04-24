@@ -8,11 +8,12 @@ namespace enigma
 {
     class RotorI : Rotor
     {
+        private Aplicacion apR1 = new Aplicacion(outputI.ToCharArray());
         const string outputI = "ekmflgdqvzntowyhxuspaibrcj";
 
-        public RotorI(Aplicacion ap) : base(ap)
+        public RotorI() : base()
         {
-            ap.output = outputI.ToCharArray();
+            aplicacion = apR1;
         }
     }
 }

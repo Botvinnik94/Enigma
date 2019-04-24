@@ -14,12 +14,13 @@ namespace enigma
         const int limiteLetras = 26;
         protected char[] input;
         public char[] output;
+        private int _offset;
         public int offset
         {
-            get { return offset; }
+            get { return _offset; }
             set
             {
-                offset = value;
+                _offset = value;
             }
         }
 
@@ -87,7 +88,7 @@ namespace enigma
                 i++;
             }
 
-            return '';
+            return ' ';
         }
 
         protected virtual void OnCicloCompleto()

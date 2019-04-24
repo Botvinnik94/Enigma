@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.lbLog = new System.Windows.Forms.ListBox();
+            this.txtInput = new System.Windows.Forms.TextBox();
+            this.txtOutput = new System.Windows.Forms.TextBox();
+            this.btnEncriptar = new System.Windows.Forms.Button();
+            this.btnPlugboard = new System.Windows.Forms.Button();
+            this.cbbRotor1 = new System.Windows.Forms.ComboBox();
+            this.cbbRotor2 = new System.Windows.Forms.ComboBox();
+            this.cbbRotor3 = new System.Windows.Forms.ComboBox();
+            this.cbbOffset1 = new System.Windows.Forms.ComboBox();
+            this.cbbOffset3 = new System.Windows.Forms.ComboBox();
+            this.cbbOffset2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,97 +49,97 @@
             this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // listBox1
+            // lbLog
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(591, 38);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(247, 498);
-            this.listBox1.TabIndex = 0;
+            this.lbLog.FormattingEnabled = true;
+            this.lbLog.Location = new System.Drawing.Point(591, 38);
+            this.lbLog.Name = "lbLog";
+            this.lbLog.Size = new System.Drawing.Size(247, 498);
+            this.lbLog.TabIndex = 0;
             // 
-            // textBox1
+            // txtInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(20, 340);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(504, 153);
-            this.textBox1.TabIndex = 1;
+            this.txtInput.Location = new System.Drawing.Point(20, 340);
+            this.txtInput.Multiline = true;
+            this.txtInput.Name = "txtInput";
+            this.txtInput.Size = new System.Drawing.Size(504, 153);
+            this.txtInput.TabIndex = 1;
             // 
-            // textBox2
+            // txtOutput
             // 
-            this.textBox2.Location = new System.Drawing.Point(20, 186);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(504, 124);
-            this.textBox2.TabIndex = 2;
+            this.txtOutput.Location = new System.Drawing.Point(20, 186);
+            this.txtOutput.Multiline = true;
+            this.txtOutput.Name = "txtOutput";
+            this.txtOutput.ReadOnly = true;
+            this.txtOutput.Size = new System.Drawing.Size(504, 124);
+            this.txtOutput.TabIndex = 2;
             // 
-            // button1
+            // btnEncriptar
             // 
-            this.button1.Location = new System.Drawing.Point(212, 509);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Encriptar/Desencriptar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEncriptar.Location = new System.Drawing.Point(212, 509);
+            this.btnEncriptar.Name = "btnEncriptar";
+            this.btnEncriptar.Size = new System.Drawing.Size(129, 23);
+            this.btnEncriptar.TabIndex = 3;
+            this.btnEncriptar.Text = "Encriptar/Desencriptar";
+            this.btnEncriptar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnPlugboard
             // 
-            this.button2.Location = new System.Drawing.Point(229, 120);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Plugboard";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnPlugboard.Location = new System.Drawing.Point(229, 120);
+            this.btnPlugboard.Name = "btnPlugboard";
+            this.btnPlugboard.Size = new System.Drawing.Size(90, 23);
+            this.btnPlugboard.TabIndex = 4;
+            this.btnPlugboard.Text = "Plugboard";
+            this.btnPlugboard.UseVisualStyleBackColor = true;
+            this.btnPlugboard.Click += new System.EventHandler(this.button2_Click);
             // 
-            // comboBox1
+            // cbbRotor1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(112, 33);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(103, 21);
-            this.comboBox1.TabIndex = 5;
+            this.cbbRotor1.FormattingEnabled = true;
+            this.cbbRotor1.Location = new System.Drawing.Point(112, 33);
+            this.cbbRotor1.Name = "cbbRotor1";
+            this.cbbRotor1.Size = new System.Drawing.Size(103, 21);
+            this.cbbRotor1.TabIndex = 5;
             // 
-            // comboBox2
+            // cbbRotor2
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(249, 33);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(92, 21);
-            this.comboBox2.TabIndex = 6;
+            this.cbbRotor2.FormattingEnabled = true;
+            this.cbbRotor2.Location = new System.Drawing.Point(249, 33);
+            this.cbbRotor2.Name = "cbbRotor2";
+            this.cbbRotor2.Size = new System.Drawing.Size(92, 21);
+            this.cbbRotor2.TabIndex = 6;
             // 
-            // comboBox3
+            // cbbRotor3
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(375, 33);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(96, 21);
-            this.comboBox3.TabIndex = 7;
+            this.cbbRotor3.FormattingEnabled = true;
+            this.cbbRotor3.Location = new System.Drawing.Point(375, 33);
+            this.cbbRotor3.Name = "cbbRotor3";
+            this.cbbRotor3.Size = new System.Drawing.Size(96, 21);
+            this.cbbRotor3.TabIndex = 7;
             // 
-            // comboBox4
+            // cbbOffset1
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(112, 82);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(103, 21);
-            this.comboBox4.TabIndex = 8;
+            this.cbbOffset1.FormattingEnabled = true;
+            this.cbbOffset1.Location = new System.Drawing.Point(112, 82);
+            this.cbbOffset1.Name = "cbbOffset1";
+            this.cbbOffset1.Size = new System.Drawing.Size(103, 21);
+            this.cbbOffset1.TabIndex = 8;
             // 
-            // comboBox5
+            // cbbOffset3
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(375, 82);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(96, 21);
-            this.comboBox5.TabIndex = 9;
+            this.cbbOffset3.FormattingEnabled = true;
+            this.cbbOffset3.Location = new System.Drawing.Point(375, 82);
+            this.cbbOffset3.Name = "cbbOffset3";
+            this.cbbOffset3.Size = new System.Drawing.Size(96, 21);
+            this.cbbOffset3.TabIndex = 9;
             // 
-            // comboBox6
+            // cbbOffset2
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(249, 82);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(92, 21);
-            this.comboBox6.TabIndex = 10;
+            this.cbbOffset2.FormattingEnabled = true;
+            this.cbbOffset2.Location = new System.Drawing.Point(249, 82);
+            this.cbbOffset2.Name = "cbbOffset2";
+            this.cbbOffset2.Size = new System.Drawing.Size(92, 21);
+            this.cbbOffset2.TabIndex = 10;
             // 
             // label1
             // 
@@ -226,17 +226,17 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox6);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.cbbOffset2);
+            this.Controls.Add(this.cbbOffset3);
+            this.Controls.Add(this.cbbOffset1);
+            this.Controls.Add(this.cbbRotor3);
+            this.Controls.Add(this.cbbRotor2);
+            this.Controls.Add(this.cbbRotor1);
+            this.Controls.Add(this.btnPlugboard);
+            this.Controls.Add(this.btnEncriptar);
+            this.Controls.Add(this.txtOutput);
+            this.Controls.Add(this.txtInput);
+            this.Controls.Add(this.lbLog);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -247,17 +247,17 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ListBox lbLog;
+        private System.Windows.Forms.TextBox txtInput;
+        private System.Windows.Forms.TextBox txtOutput;
+        private System.Windows.Forms.Button btnEncriptar;
+        private System.Windows.Forms.Button btnPlugboard;
+        private System.Windows.Forms.ComboBox cbbRotor1;
+        private System.Windows.Forms.ComboBox cbbRotor2;
+        private System.Windows.Forms.ComboBox cbbRotor3;
+        private System.Windows.Forms.ComboBox cbbOffset1;
+        private System.Windows.Forms.ComboBox cbbOffset3;
+        private System.Windows.Forms.ComboBox cbbOffset2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

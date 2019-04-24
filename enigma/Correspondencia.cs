@@ -10,12 +10,18 @@ namespace enigma
     {
         protected Aplicacion aplicacion;
         //TODO manejo de eventos
+
+        public Correspondencia()
+        {
+
+        }
+
         public Correspondencia( Aplicacion ap)
         {
             aplicacion = ap;
         }
 
-        char encriptar (char entrada)
+        public char encriptar (char entrada)
         {
             return aplicacion.Encriptar(entrada);
         }

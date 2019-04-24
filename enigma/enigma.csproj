@@ -53,6 +53,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Log.cs" />
     <Compile Include="Plugboard.cs" />
     <Compile Include="PlugboardView.cs">
       <SubType>Form</SubType>

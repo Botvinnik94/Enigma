@@ -16,6 +16,11 @@ namespace enigma
             ap.CicloCompleto += EventoCicloCompleto;//Suscripción al evento
         }
 
+        public Rotor() : base()
+        {
+
+        }
+
         public void Rotar()
         {
             aplicacion.Rotar();

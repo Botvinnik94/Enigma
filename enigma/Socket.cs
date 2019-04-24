@@ -63,7 +63,7 @@ namespace enigma
             Log.Entries.Add($"Input: {c}");
 
             temp = c;
-            c = Plugboard.Encriptar(c);
+            c = Plugboard.encriptar(c);
 
             Log.Entries.Add($"{temp} -> Plugboard -> {c}");
 
@@ -84,7 +84,7 @@ namespace enigma
             }
 
             temp = c;
-            c = Plugboard.Encriptar(c);
+            c = Plugboard.encriptar(c);
 
             Log.Entries.Add($"{temp} -> Plugboard -> {c}");
             Log.Entries.Add($"Output: {c}");
@@ -93,7 +93,16 @@ namespace enigma
 
         private void EventoCicloCompleto(object sender, EventArgs e)
         {
-            //TODO acción a realizar cuando llegue el evento
+            Rotor r = sender as Rotor;
+
+
+            for(int i = 0; i < Rotores.Length; ++i)
+            {
+                if(Rotores[i] == r && i < Rotores.Length - 1)
+                {
+                    Rotores[i + 1].Rotar();
+                }
+            }
         }
     }
 }
