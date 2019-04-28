@@ -21,9 +21,9 @@ namespace enigma
         public Form1()
         {
             RotorTypes = new Rotor[3];
-            RotorTypes[0] = new RotorI();
-            RotorTypes[1] = new RotorII();
-            RotorTypes[2] = new RotorIII();
+            RotorTypes[0] = new RotorI(0);
+            RotorTypes[1] = new RotorII(0);
+            RotorTypes[2] = new RotorIII(0);
 
             Offsets = new int[27] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 };
 
@@ -32,17 +32,33 @@ namespace enigma
             InitializeComponent();
 
             cbbRotor1.DataSource = RotorTypes;
-            cbbRotor2.DataSource = RotorTypes;
-            cbbRotor3.DataSource = RotorTypes;
             cbbOffset1.DataSource = Offsets;
+            cbbRotor2.BindingContext = new BindingContext();
+            cbbOffset2.BindingContext = new BindingContext();
+            cbbRotor2.DataSource = RotorTypes;
             cbbOffset2.DataSource = Offsets;
+            cbbRotor3.BindingContext = new BindingContext();
+            cbbOffset3.BindingContext = new BindingContext(); 
+            cbbRotor3.DataSource = RotorTypes;
             cbbOffset3.DataSource = Offsets;
+
+            //cbbRotor2.SelectedIndex = 1;
+            //cbbRotor3.SelectedIndex = 2;
+            ChangeEnigma();
+            Enigma.Log.Entries.CollectionChanged += EventoLogChanged;
         }
 
         private void ChangeEnigma()
         {
             Rotor[] rotors = new Rotor[3] { cbbRotor1.SelectedItem as Rotor, cbbRotor2.SelectedItem as Rotor, cbbRotor3.SelectedItem as Rotor};
             Enigma = new Socket(rotors, P);
+        }
+
+        private void ChangeOffset(object sender, EventArgs e)
+        {
+            RotorTypes[0].ChangeOffset(Convert.ToInt32(cbbOffset1.SelectedItem));
+            RotorTypes[1].ChangeOffset(Convert.ToInt32(cbbOffset2.SelectedItem));
+            RotorTypes[2].ChangeOffset(Convert.ToInt32(cbbOffset3.SelectedItem));
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -52,7 +68,30 @@ namespace enigma
 
         private void button2_Click(object sender, EventArgs e)
         {
+            PlugboardView pgv = new PlugboardView(P);
+            pgv.ShowDialog();
+            pgv.Dispose();
+        }
 
+        private void btnEncriptar_Click(object sender, EventArgs e)
+        {
+            string input = txtInput.Text;
+            txtOutput.Clear();
+            txtOutput.Text = Enigma.Enigma(input);
+        }
+
+        private void EventoLogChanged(object sender, EventArgs e)
+        {
+            lbLog.Items.Clear();
+            foreach (var item in Enigma.Log.Entries)
+            {
+                lbLog.Items.Add(item);
+            }
+        }
+
+        private void RotorChanged(object sender, EventArgs e)
+        {
+            ChangeEnigma();
         }
     }
 }

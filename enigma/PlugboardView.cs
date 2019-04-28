@@ -12,9 +12,17 @@ namespace enigma
 {
     public partial class PlugboardView : Form
     {
-        public PlugboardView()
+        Plugboard P;
+
+        public PlugboardView(Plugboard p)
         {
+            P = p;
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

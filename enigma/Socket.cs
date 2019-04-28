@@ -11,7 +11,7 @@ namespace enigma
 
         Rotor[] Rotores { get; set; }
         Plugboard Plugboard { get; set; }
-        Log Log { get; set; }
+        public Log Log { get; set; }
 
         public Socket(Rotor[] r, Plugboard p)
         {
@@ -75,7 +75,7 @@ namespace enigma
                 Log.Entries.Add($"{temp} -> Rotor {i+1} -> {c}");
             }
 
-            for (int i = Rotores.Length - 1; i >= 0; i++)
+            for (int i = Rotores.Length - 1; i >= 0; i--)
             {
                 temp = c;
                 c = Rotores[i].Encriptar(c);

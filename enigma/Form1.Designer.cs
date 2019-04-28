@@ -47,6 +47,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbLog
@@ -54,7 +55,7 @@
             this.lbLog.FormattingEnabled = true;
             this.lbLog.Location = new System.Drawing.Point(591, 38);
             this.lbLog.Name = "lbLog";
-            this.lbLog.Size = new System.Drawing.Size(247, 498);
+            this.lbLog.Size = new System.Drawing.Size(247, 472);
             this.lbLog.TabIndex = 0;
             // 
             // txtInput
@@ -82,6 +83,7 @@
             this.btnEncriptar.TabIndex = 3;
             this.btnEncriptar.Text = "Encriptar/Desencriptar";
             this.btnEncriptar.UseVisualStyleBackColor = true;
+            this.btnEncriptar.Click += new System.EventHandler(this.btnEncriptar_Click);
             // 
             // btnPlugboard
             // 
@@ -100,6 +102,7 @@
             this.cbbRotor1.Name = "cbbRotor1";
             this.cbbRotor1.Size = new System.Drawing.Size(103, 21);
             this.cbbRotor1.TabIndex = 5;
+            this.cbbRotor1.SelectedIndexChanged += new System.EventHandler(this.RotorChanged);
             // 
             // cbbRotor2
             // 
@@ -108,6 +111,7 @@
             this.cbbRotor2.Name = "cbbRotor2";
             this.cbbRotor2.Size = new System.Drawing.Size(92, 21);
             this.cbbRotor2.TabIndex = 6;
+            this.cbbRotor2.SelectedIndexChanged += new System.EventHandler(this.RotorChanged);
             // 
             // cbbRotor3
             // 
@@ -116,6 +120,7 @@
             this.cbbRotor3.Name = "cbbRotor3";
             this.cbbRotor3.Size = new System.Drawing.Size(96, 21);
             this.cbbRotor3.TabIndex = 7;
+            this.cbbRotor3.SelectedIndexChanged += new System.EventHandler(this.RotorChanged);
             // 
             // cbbOffset1
             // 
@@ -124,6 +129,7 @@
             this.cbbOffset1.Name = "cbbOffset1";
             this.cbbOffset1.Size = new System.Drawing.Size(103, 21);
             this.cbbOffset1.TabIndex = 8;
+            this.cbbOffset1.SelectedIndexChanged += new System.EventHandler(this.ChangeOffset);
             // 
             // cbbOffset3
             // 
@@ -132,6 +138,7 @@
             this.cbbOffset3.Name = "cbbOffset3";
             this.cbbOffset3.Size = new System.Drawing.Size(96, 21);
             this.cbbOffset3.TabIndex = 9;
+            this.cbbOffset3.SelectedIndexChanged += new System.EventHandler(this.ChangeOffset);
             // 
             // cbbOffset2
             // 
@@ -140,6 +147,7 @@
             this.cbbOffset2.Name = "cbbOffset2";
             this.cbbOffset2.Size = new System.Drawing.Size(92, 21);
             this.cbbOffset2.TabIndex = 10;
+            this.cbbOffset2.SelectedIndexChanged += new System.EventHandler(this.ChangeOffset);
             // 
             // label1
             // 
@@ -213,11 +221,21 @@
             this.label8.TabIndex = 18;
             this.label8.Text = "Input";
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(688, 516);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 19;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 558);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -266,6 +284,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }
 

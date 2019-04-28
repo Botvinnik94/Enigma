@@ -10,7 +10,7 @@ namespace enigma
     {
         public delegate void CicloCompletoEventHandler(object sender, EventArgs e);
 
-        const string abecedario = "abcdefghijklmnñopqrstuvwxyz";
+        const string abecedario = "abcdefghijklmnopqrstuvwxyz";
         const int limiteLetras = 26;
         protected char[] input;
         public char[] output;
