@@ -8,11 +8,12 @@ namespace enigma
 {
     class RotorI : Rotor
     {
-        const string outputI = "ekmflgdqvzntowyhxuspaibrcj";
+        const string outputI = "ekmflgdqvzntowñyhxuspaibrcj";
 
         public RotorI(int offset) : base()
         {
             aplicacion = new Aplicacion(outputI.ToCharArray(), offset);
+            aplicacion.CicloCompleto += EventoCicloCompleto;
         }
     }
 }

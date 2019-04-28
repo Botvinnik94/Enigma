@@ -42,10 +42,30 @@ namespace enigma
             cbbRotor3.DataSource = RotorTypes;
             cbbOffset3.DataSource = Offsets;
 
-            //cbbRotor2.SelectedIndex = 1;
-            //cbbRotor3.SelectedIndex = 2;
+            cbbRotor2.SelectedIndex = 1;
+            cbbRotor3.SelectedIndex = 2;
             ChangeEnigma();
-            Enigma.Log.Entries.CollectionChanged += EventoLogChanged;
+            Enigma.EncriptacionFinalizada += EventoLogChanged;
+            Enigma.EventoRotacionRotor += EventoRotacion;
+        }
+
+        private void EventoRotacion(object sender, EventArgs e)
+        {
+            int index = Convert.ToInt32(sender);
+            switch (index)
+            {
+                case 0:
+                    cbbOffset1.SelectedItem = Enigma.Rotores[0].GetOffset();
+                    break;
+                case 1:
+                    cbbOffset2.SelectedItem = Enigma.Rotores[1].GetOffset();
+                    break;
+                case 2:
+                    cbbOffset3.SelectedItem = Enigma.Rotores[2].GetOffset();
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void ChangeEnigma()
@@ -91,7 +111,13 @@ namespace enigma
 
         private void RotorChanged(object sender, EventArgs e)
         {
-            ChangeEnigma();
+            //ChangeEnigma();
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            Enigma.Log.Entries.Clear();
+            lbLog.Items.Clear();
         }
     }
 }

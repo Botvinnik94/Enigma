@@ -10,8 +10,8 @@ namespace enigma
     {
         public delegate void CicloCompletoEventHandler(object sender, EventArgs e);
 
-        const string abecedario = "abcdefghijklmnopqrstuvwxyz";
-        const int limiteLetras = 26;
+        const string abecedario = "abcdefghijklmnñopqrstuvwxyz";
+        const int limiteLetras = 27;
         protected char[] input;
         public char[] output;
         private int _offset;
@@ -64,6 +64,7 @@ namespace enigma
             if (offset == limiteLetras)
             {
                 OnCicloCompleto(); //Mandamos la señal para avisar de que se ha rotado hasta la ulima posicion
+                offset = 0;
             }
 
         }
@@ -78,12 +79,13 @@ namespace enigma
             {
                 if (p.Equals(entrada))
                 {
-                    char salida = output[i];
-                    if (offset != -1)
-                    {
-                        Rotar();
-                    }
-                    return salida;
+                    //char salida = output[i];
+                    //if (offset != -1)
+                    //{
+                    //    Rotar();
+                    //}
+                    //return salida;
+                    return output[i];
                 }
                 i++;
             }

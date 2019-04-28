@@ -25,5 +25,10 @@ namespace enigma
         {
             return aplicacion.Encriptar(entrada);
         }
+
+        public int GetOffset()
+        {
+            return aplicacion.offset;
+        }
     }
 }

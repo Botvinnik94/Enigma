@@ -11,6 +11,7 @@ namespace enigma
         public delegate void AvisoCicloCompletoEventHandler(object sender, EventArgs e);
 
         public event AvisoCicloCompletoEventHandler AvisoCicloCompleto;
+        public event EventHandler AvisoRotacion;
 
         public Rotor(Aplicacion ap): base(ap) {
             ap.CicloCompleto += EventoCicloCompleto;//Suscripción al evento
@@ -18,12 +19,12 @@ namespace enigma
 
         public Rotor() : base()
         {
-
         }
 
         public void Rotar()
         {
             aplicacion.Rotar();
+            OnAvisoRotacion();
         }
 
         public char Encriptar(char input)
@@ -36,7 +37,7 @@ namespace enigma
             aplicacion.offset = offset;
         }
 
-        private void EventoCicloCompleto(object sender, EventArgs e)
+        protected void EventoCicloCompleto(object sender, EventArgs e)
         {
             OnAvisoCicloCompleto();
         }
@@ -47,6 +48,11 @@ namespace enigma
             {
                 AvisoCicloCompleto(this, new EventArgs());
             }
+        }
+
+        protected virtual void OnAvisoRotacion()
+        {
+            AvisoRotacion?.Invoke(this, EventArgs.Empty);
         }
     }
 

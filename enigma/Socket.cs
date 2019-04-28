@@ -9,9 +9,12 @@ namespace enigma
     class Socket
     {
 
-        Rotor[] Rotores { get; set; }
+        public Rotor[] Rotores { get; set; }
         Plugboard Plugboard { get; set; }
         public Log Log { get; set; }
+
+        public event EventHandler EncriptacionFinalizada;
+        public event EventHandler EventoRotacionRotor;
 
         public Socket(Rotor[] r, Plugboard p)
         {
@@ -20,12 +23,26 @@ namespace enigma
             foreach(Rotor rotor in Rotores)
             {
                 rotor.AvisoCicloCompleto += EventoCicloCompleto;//Suscripción a evento por cada uno de los rotores
+                rotor.AvisoRotacion += EventoRotacion;
             }
 
             Plugboard = p;
             Log = new Log();
         }
-       
+
+        private void EventoRotacion(object sender, EventArgs e)
+        {
+            Rotor r = sender as Rotor;
+
+            for (int i = 0; i < Rotores.Length; ++i)
+            {
+                if (Rotores[i] == r)
+                {
+                    OnEventoRotacionRotor(i);
+                }
+            }
+        }
+
         public void ChangeRotor(int position, Rotor r)
         {
             if(position >= 0 && position < Rotores.Length)
@@ -53,6 +70,7 @@ namespace enigma
                 str.Append(Encriptar(c));
             }
 
+            OnEncriptacionFinalizada();
             return str.ToString();
         }
 
@@ -62,6 +80,7 @@ namespace enigma
 
             Log.Entries.Add($"Input: {c}");
 
+            c = Char.ToLower(c);
             temp = c;
             c = Plugboard.encriptar(c);
 
@@ -83,6 +102,7 @@ namespace enigma
                 Log.Entries.Add($"{temp} -> Rotor {i + 1} -> {c}");
             }
 
+            Rotores[0].Rotar();
             temp = c;
             c = Plugboard.encriptar(c);
 
@@ -103,6 +123,16 @@ namespace enigma
                     Rotores[i + 1].Rotar();
                 }
             }
+        }
+
+        protected virtual void OnEncriptacionFinalizada()
+        {
+            EncriptacionFinalizada?.Invoke(this, EventArgs.Empty);
+        }
+
+        protected virtual void OnEventoRotacionRotor(int? index)
+        {
+            EventoRotacionRotor?.Invoke(index, EventArgs.Empty);
         }
     }
 }
