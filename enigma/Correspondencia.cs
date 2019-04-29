@@ -28,7 +28,7 @@ namespace enigma
 
         public int GetOffset()
         {
-            return aplicacion.offset;
+            return aplicacion.getOffset();
         }
     }
 }

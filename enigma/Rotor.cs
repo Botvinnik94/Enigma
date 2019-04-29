@@ -34,7 +34,7 @@ namespace enigma
 
         public void ChangeOffset(int offset)
         {
-            aplicacion.offset = offset;
+            aplicacion.changeOffset(offset);
         }
 
         protected void EventoCicloCompleto(object sender, EventArgs e)

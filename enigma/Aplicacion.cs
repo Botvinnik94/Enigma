@@ -13,16 +13,16 @@ namespace enigma
         const string abecedario = "abcdefghijklmnñopqrstuvwxyz";
         const int limiteLetras = 27;
         protected char[] input;
-        public char[] output;
+        private char[] output;
         private int _offset;
-        public int offset
-        {
+        private int offset;
+        /*{
             get { return _offset; }
             set
             {
                 _offset = value;
             }
-        }
+        }*/
 
         public event CicloCompletoEventHandler CicloCompleto;
 
@@ -53,13 +53,22 @@ namespace enigma
             //Almacenamos el ultimo elemento del array y se desplaza los elementos del array una posición a la derecha
             //Finalmente el ultimo elemento pasa a ser el primero por la rotacion
 
-            char temp = output[output.Length-1];
-            for(int i = output.Length - 1; i > 0; i--)
+            Console.WriteLine();
+            foreach (char c in output)
             {
-                output[i] = output[i - 1];
+                Console.WriteLine(c);
             }
+            Console.WriteLine();
+            var temp = output[output.Length-1];
+            for (int i = output.Length-1; i > 0; i--)
+                output[i] = output[i-1];
             output[0] = temp;
 
+            foreach(char c in output)
+            {
+                Console.WriteLine(c);
+            }
+            Console.WriteLine();
             offset++;
             if (offset == limiteLetras)
             {
@@ -99,6 +108,24 @@ namespace enigma
             {
                 CicloCompleto(this, new EventArgs());
             }
+        }
+
+        public void changeOffset(int entero)
+        {
+            for(int j = 0; j < offset; j++)
+            {
+                var temp = output[0];
+                for (int i = 0; i < output.Length - 1; i++)
+                    output[i] = output[i + 1];
+                output[output.Length - 1] = temp;
+            }
+
+            this.offset = entero;
+        }
+
+        public int getOffset()
+        {
+            return this.offset;
         }
     }
 }
