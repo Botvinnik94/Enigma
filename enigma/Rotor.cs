@@ -23,18 +23,13 @@ namespace enigma
 
         public void Rotar()
         {
-            aplicacion.Rotar();
-            OnAvisoRotacion();
-        }
-
-        public char Encriptar(char input)
-        {
-            return aplicacion.Encriptar(input);
+            ChangeOffset(aplicacion.offset + 1);
         }
 
         public void ChangeOffset(int offset)
         {
-            aplicacion.changeOffset(offset);
+            aplicacion.offset = offset;
+            OnAvisoRotacion();
         }
 
         protected void EventoCicloCompleto(object sender, EventArgs e)

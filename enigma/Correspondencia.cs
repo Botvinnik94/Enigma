@@ -21,7 +21,12 @@ namespace enigma
             aplicacion = ap;
         }
 
-        public char encriptar (char entrada)
+        public char Encriptar (char entrada)
+        {
+            return aplicacion.Encriptar(entrada);
+        }
+
+        public char EncriptarInverso (char entrada)
         {
             return aplicacion.Encriptar(entrada);
         }

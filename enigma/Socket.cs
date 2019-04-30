@@ -12,7 +12,8 @@ namespace enigma
         public Rotor[] Rotores { get; set; }
         Plugboard Plugboard { get; set; }
         public Log Log { get; set; }
-        private int rotorArotar;
+        private Aplicacion Reflector;
+        //private int rotorArotar;
 
         public event EventHandler EncriptacionFinalizada;
         public event EventHandler EventoRotacionRotor;
@@ -21,7 +22,7 @@ namespace enigma
         {
             Rotores = r;
 
-            this.rotorArotar = 0;//CHANGED
+            //this.rotorArotar = 0;//CHANGED
 
             foreach(Rotor rotor in Rotores)
             {
@@ -30,6 +31,7 @@ namespace enigma
             }
 
             Plugboard = p;
+            Reflector = new Aplicacion("yruhqsldpxngokñmiebfzcwvjat".ToCharArray());
             Log = new Log();
         }
 
@@ -56,16 +58,16 @@ namespace enigma
 
         public void ChangeOffset(Rotor r, int offset)
         {
-            if (offset == 26) //CHANGED
-            {
-                for(int i=0; i< Rotores.Length; i++)
-                {
-                    if (Rotores[i] == r)
-                    {
-                        this.rotorArotar = i;
-                    }
-                }
-            }
+            //if (offset == 26) //CHANGED
+            //{
+            //    for(int i=0; i< Rotores.Length; i++)
+            //    {
+            //        if (Rotores[i] == r)
+            //        {
+            //            this.rotorArotar = i;
+            //        }
+            //    }
+            //}
             r.ChangeOffset(offset);
         }
 
@@ -95,7 +97,7 @@ namespace enigma
 
             c = Char.ToLower(c);
             temp = c;
-            c = Plugboard.encriptar(c);
+            c = Plugboard.Encriptar(c);
 
             Log.Entries.Add($"{temp} -> Plugboard -> {c}");
 
@@ -107,21 +109,27 @@ namespace enigma
                 Log.Entries.Add($"{temp} -> Rotor {i+1} -> {c}");
             }
 
+            temp = c;
+            c = Reflector.Encriptar(c);
+            Log.Entries.Add($"{temp} -> Reflector -> {c}");
+
             for (int i = Rotores.Length - 1; i >= 0; i--)
             {
                 temp = c;
-                c = Rotores[i].Encriptar(c);
+                c = Rotores[i].EncriptarInverso(c);
 
-                if (i == this.rotorArotar)
-                {
-                    Rotores[rotorArotar].Rotar(); //CHANGED
-                }
+                //if (i == this.rotorArotar)
+                //{
+                //    Rotores[rotorArotar].Rotar(); //CHANGED
+                //}
 
                 Log.Entries.Add($"{temp} -> Rotor {i + 1} -> {c}");
             }
 
             temp = c;
-            c = Plugboard.encriptar(c);
+            c = Plugboard.EncriptarInverso(c);
+
+            Rotores[0].Rotar();
 
             Log.Entries.Add($"{temp} -> Plugboard -> {c}");
             Log.Entries.Add($"Output: {c}");
@@ -137,7 +145,7 @@ namespace enigma
             {
                 if(Rotores[i] == r && i < Rotores.Length - 1)
                 {
-                    this.rotorArotar = i+1; //CHANGED
+                    //this.rotorArotar = i+1; //CHANGED
                     Rotores[i + 1].Rotar();
                 }
             }

@@ -15,28 +15,48 @@ namespace enigma
         protected char[] input;
         private char[] output;
         private int _offset;
-        private int offset;
-        /*{
+        public int offset
+        {
             get { return _offset; }
             set
             {
-                _offset = value;
+                if (value == limiteLetras)
+                {
+                    value = 0;
+                    OnCicloCompleto();
+                }
+
+                if(value >= 0 && value < limiteLetras)
+                {
+                    int numberOfRotations = 0;
+
+                    if (value > offset)
+                    {
+                        numberOfRotations = value - offset;
+                    }
+                    else if (value < offset)
+                    {
+                        numberOfRotations = value - offset + limiteLetras;
+                    }
+
+                    for (int i = 0; i < numberOfRotations; ++i)
+                    {
+                        Rotar();
+                    }
+
+                    _offset = value;
+                }                
             }
-        }*/
+        }
 
         public event CicloCompletoEventHandler CicloCompleto;
 
         //Constructor para los rotores
         public Aplicacion(char[] salida, int offset)
         {
-            this.offset = offset;
             output = salida;
-            if (offset > 0)
-            {
-                for (int i = 0; i <= offset; i++)
-                    Rotar();
-            }
             input = abecedario.ToCharArray();
+            this.offset = offset;
         }
 
         //Constructor para el plugboard
@@ -44,7 +64,7 @@ namespace enigma
         {
             input = abecedario.ToCharArray();
             output = salida;
-            offset = -1;
+            this.offset = 0;
         }
 
         public void Rotar()
@@ -53,28 +73,28 @@ namespace enigma
             //Almacenamos el ultimo elemento del array y se desplaza los elementos del array una posición a la derecha
             //Finalmente el ultimo elemento pasa a ser el primero por la rotacion
 
-            Console.WriteLine();
-            foreach (char c in output)
-            {
-                Console.WriteLine(c);
-            }
-            Console.WriteLine();
+            //Console.WriteLine();
+            //foreach (char c in output)
+            //{
+            //    Console.WriteLine(c);
+            //}
+            //Console.WriteLine();
             var temp = output[output.Length-1];
             for (int i = output.Length-1; i > 0; i--)
                 output[i] = output[i-1];
             output[0] = temp;
 
-            foreach(char c in output)
-            {
-                Console.WriteLine(c);
-            }
-            Console.WriteLine();
-            offset++;
-            if (offset == limiteLetras)
-            {
-                OnCicloCompleto(); //Mandamos la señal para avisar de que se ha rotado hasta la ulima posicion
-                offset = 0;
-            }
+            //foreach(char c in output)
+            //{
+            //    Console.WriteLine(c);
+            //}
+            //Console.WriteLine();
+            //_offset++;
+            //if (_offset == limiteLetras)
+            //{
+                //OnCicloCompleto(); //Mandamos la señal para avisar de que se ha rotado hasta la ulima posicion
+                //_offset = 0;
+            //}
 
         }
 
@@ -102,25 +122,27 @@ namespace enigma
             return ' ';
         }
 
+        public char EncriptarInverso(char entrada)
+        {
+            int i = 0;
+            foreach (char p in output)
+            {
+                if (p.Equals(entrada))
+                {
+                    return input[i];
+                }
+                i++;
+            }
+
+            return ' ';
+        }
+
         protected virtual void OnCicloCompleto()
         {
             if (CicloCompleto != null)
             {
                 CicloCompleto(this, new EventArgs());
             }
-        }
-
-        public void changeOffset(int entero)
-        {
-            for(int j = 0; j < offset; j++)
-            {
-                var temp = output[0];
-                for (int i = 0; i < output.Length - 1; i++)
-                    output[i] = output[i + 1];
-                output[output.Length - 1] = temp;
-            }
-
-            this.offset = entero;
         }
 
         public int getOffset()
