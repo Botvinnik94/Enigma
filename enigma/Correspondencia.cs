@@ -28,7 +28,7 @@ namespace enigma
 
         public char EncriptarInverso (char entrada)
         {
-            return aplicacion.Encriptar(entrada);
+            return aplicacion.EncriptarInverso(entrada);
         }
 
         public int GetOffset()
