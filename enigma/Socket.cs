@@ -31,7 +31,7 @@ namespace enigma
             }
 
             Plugboard = p;
-            Reflector = new Aplicacion("yruhqsldpxngokñmiebfzcwvjat".ToCharArray());
+            Reflector = new Aplicacion("yruhqsldpxngokmiebfzcwvjat".ToCharArray());//reflector tipo B
             Log = new Log();
         }
 

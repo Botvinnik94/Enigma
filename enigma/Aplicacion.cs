@@ -10,10 +10,11 @@ namespace enigma
     {
         public delegate void CicloCompletoEventHandler(object sender, EventArgs e);
 
-        const string abecedario = "abcdefghijklmnñopqrstuvwxyz";
-        const int limiteLetras = 27;
+        const string abecedario = "abcdefghijklmnopqrstuvwxyz";
+        const int limiteLetras = 26;
         protected char[] input;
-        private char[] output;
+        private char[] output1;
+        private char[] output2;
         private int _offset;
         public int offset
         {
@@ -52,9 +53,10 @@ namespace enigma
         public event CicloCompletoEventHandler CicloCompleto;
 
         //Constructor para los rotores
-        public Aplicacion(char[] salida, int offset)
+        public Aplicacion(char[] salida1, char[] salida2, int offset)
         {
-            output = salida;
+            output1 = salida1;
+            output2 = salida2;
             input = abecedario.ToCharArray();
             this.offset = offset;
         }
@@ -63,7 +65,8 @@ namespace enigma
         public Aplicacion(char[] salida)
         {
             input = abecedario.ToCharArray();
-            output = salida;
+            output1 = salida;
+            output2 = null;
             this.offset = 0;
         }
 
@@ -79,10 +82,15 @@ namespace enigma
             //    Console.WriteLine(c);
             //}
             //Console.WriteLine();
-            var temp = output[output.Length-1];
-            for (int i = output.Length-1; i > 0; i--)
-                output[i] = output[i-1];
-            output[0] = temp;
+            var temp = output1[output1.Length-1];
+            for (int i = output1.Length-1; i > 0; i--)
+                output1[i] = output1[i-1];
+            output1[0] = temp;
+
+            temp = output2[output2.Length - 1];
+            for (int i = output2.Length - 1; i > 0; i--)
+                output2[i] = output2[i - 1];
+            output2[0] = temp;
 
             //foreach(char c in output)
             //{
@@ -92,8 +100,8 @@ namespace enigma
             //_offset++;
             //if (_offset == limiteLetras)
             //{
-                //OnCicloCompleto(); //Mandamos la señal para avisar de que se ha rotado hasta la ulima posicion
-                //_offset = 0;
+            //OnCicloCompleto(); //Mandamos la señal para avisar de que se ha rotado hasta la ulima posicion
+            //_offset = 0;
             //}
 
         }
@@ -108,16 +116,29 @@ namespace enigma
             {
                 if (p.Equals(entrada))
                 {
-                    //char salida = output[i];
-                    //if (offset != -1)
-                    //{
-                    //    Rotar();
-                    //}
-                    //return salida;
-                    return output[i];
+                    entrada=output1[i];
+                    break;
                 }
                 i++;
             }
+
+            if (output2 == null)
+            {
+                return entrada;
+            }
+            else
+            {
+                int j = 0;
+                foreach (char t in input)
+                {
+                    if (t.Equals(entrada))
+                    {
+                        return output2[j];
+                    }
+                    j++;
+                }
+            }
+            
 
             return ' ';
         }
@@ -125,14 +146,41 @@ namespace enigma
         public char EncriptarInverso(char entrada)
         {
             int i = 0;
-            foreach (char p in output)
+
+            if (output2 == null)
             {
-                if (p.Equals(entrada))
+                foreach (char p in output1)
                 {
-                    return input[i];
+                    if (p.Equals(entrada))
+                    {
+                        return input[i];
+                    }
+                    i++;
                 }
-                i++;
             }
+            else
+            {
+                foreach (char p in output2)
+                {
+                    if (p.Equals(entrada))
+                    {
+                        entrada=input[i];
+                        break;
+                    }
+                    i++;
+                }
+
+                int j = 0;
+                foreach (char t in output1)
+                {
+                    if (t.Equals(entrada))
+                    {
+                        return input[j];
+                    }
+                    j++;
+                }
+            }
+            
 
             return ' ';
         }
