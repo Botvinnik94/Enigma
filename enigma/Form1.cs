@@ -63,13 +63,13 @@ namespace enigma
             switch (index)
             {
                 case 0:
-                    cbbOffset1.SelectedItem = Enigma.Rotores[0].GetOffset();
+                    cbbOffset1.SelectedItem = (cbbRotor1.SelectedItem as Rotor).GetOffset();
                     break;
                 case 1:
-                    cbbOffset2.SelectedItem = Enigma.Rotores[1].GetOffset();
+                    cbbOffset2.SelectedItem = (cbbRotor2.SelectedItem as Rotor).GetOffset();
                     break;
                 case 2:
-                    cbbOffset3.SelectedItem = Enigma.Rotores[2].GetOffset();
+                    cbbOffset3.SelectedItem = (cbbRotor3.SelectedItem as Rotor).GetOffset();
                     break;
                 default:
                     break;

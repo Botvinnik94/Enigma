@@ -118,11 +118,6 @@ namespace enigma
                 temp = c;
                 c = Rotores[i].EncriptarInverso(c);
 
-                //if (i == this.rotorArotar)
-                //{
-                //    Rotores[rotorArotar].Rotar(); //CHANGED
-                //}
-
                 Log.Entries.Add($"{temp} -> Rotor {i + 1} -> {c}");
             }
 
