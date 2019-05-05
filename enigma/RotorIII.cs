@@ -15,5 +15,10 @@ namespace enigma
             aplicacion = new Aplicacion(outputIII.ToCharArray(), offset);
             aplicacion.CicloCompleto += EventoCicloCompleto;
         }
+
+        public override string ToString()
+        {
+            return "III";
+        }
     }
 }
