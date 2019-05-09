@@ -69,32 +69,10 @@ namespace enigma
 
         public void Rotar()
         {
-            //Proceso al rotar:
-            //Almacenamos el ultimo elemento del array y se desplaza los elementos del array una posición a la derecha
-            //Finalmente el ultimo elemento pasa a ser el primero por la rotacion
-
-            //Console.WriteLine();
-            //foreach (char c in output)
-            //{
-            //    Console.WriteLine(c);
-            //}
-            //Console.WriteLine();
             var temp = output[output.Length-1];
             for (int i = output.Length-1; i > 0; i--)
                 output[i] = output[i-1];
             output[0] = temp;
-
-            //foreach(char c in output)
-            //{
-            //    Console.WriteLine(c);
-            //}
-            //Console.WriteLine();
-            //_offset++;
-            //if (_offset == limiteLetras)
-            //{
-                //OnCicloCompleto(); //Mandamos la señal para avisar de que se ha rotado hasta la ulima posicion
-                //_offset = 0;
-            //}
 
         }
 
@@ -108,12 +86,6 @@ namespace enigma
             {
                 if (p.Equals(entrada))
                 {
-                    //char salida = output[i];
-                    //if (offset != -1)
-                    //{
-                    //    Rotar();
-                    //}
-                    //return salida;
                     return output[i];
                 }
                 i++;
@@ -139,10 +111,7 @@ namespace enigma
 
         protected virtual void OnCicloCompleto()
         {
-            if (CicloCompleto != null)
-            {
-                CicloCompleto(this, new EventArgs());
-            }
+            CicloCompleto?.Invoke(this, new EventArgs());
         }
 
         public int getOffset()

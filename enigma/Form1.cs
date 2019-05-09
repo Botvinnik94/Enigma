@@ -84,9 +84,9 @@ namespace enigma
 
         private void ChangeOffset(object sender, EventArgs e)
         {
-            RotorTypes[0].ChangeOffset(Convert.ToInt32(cbbOffset1.SelectedItem));
-            RotorTypes[1].ChangeOffset(Convert.ToInt32(cbbOffset2.SelectedItem));
-            RotorTypes[2].ChangeOffset(Convert.ToInt32(cbbOffset3.SelectedItem));
+            (cbbRotor1.SelectedItem as Rotor)?.ChangeOffset(Convert.ToInt32(cbbOffset1.SelectedItem));
+            (cbbRotor2.SelectedItem as Rotor)?.ChangeOffset(Convert.ToInt32(cbbOffset2.SelectedItem));
+            (cbbRotor3.SelectedItem as Rotor)?.ChangeOffset(Convert.ToInt32(cbbOffset3.SelectedItem));
         }
 
         private void Form1_Load(object sender, EventArgs e)
