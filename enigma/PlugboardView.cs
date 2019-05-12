@@ -22,7 +22,7 @@ namespace enigma
         public PlugboardView(Plugboard p)
         {
             P = p;
-            IndexesSelected = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 };
+            
             InitializeComponent();
 
             Abecedario = "abcdefghijklmnñopqrstuvwxyz".ToCharArray();
@@ -60,7 +60,9 @@ namespace enigma
 
             ComboBoxArray = new ComboBox[] { cbbA, cbbB, cbbC, cbbD, cbbE, cbbF, cbbG, cbbH, cbbI, cbbJ, cbbK, cbbL, cbbM, cbbN, cbbNN, cbbO, cbbP, cbbQ, cbbR,
                                              cbbS, cbbT, cbbU, cbbV, cbbW, cbbX, cbbY, cbbZ};
-           
+
+
+            FillIndexesSelected();
 
             cbbA.DataSource = Abecedario;
             cbbB.BindingContext = new BindingContext();
@@ -123,11 +125,9 @@ namespace enigma
 
         private void UpdateComboBoxes()
         {
-            foreach (char c in P.aplicacion.output)
+            for(int i = 0; i < P.aplicacion.output.Length; ++i)
             {
-                int i;
-                IntCharCorrespondency.TryGetValue(c, out i);
-                ComboBoxArray[i].SelectedItem = c;
+                ComboBoxArray[i].SelectedItem = P.aplicacion.output[i];
             }
         }
 
@@ -196,6 +196,18 @@ namespace enigma
         {
             UpdatePlugboard();
             Close();
+        }
+
+        private void FillIndexesSelected()
+        {
+            IndexesSelected = new int[27];
+
+            for(int i = 0; i < P.aplicacion.output.Length; ++i)
+            {
+                int index;
+                IntCharCorrespondency.TryGetValue(P.aplicacion.output[i], out index);
+                IndexesSelected[i] = index;
+            }
         }
     }
 }
