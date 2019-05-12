@@ -8,7 +8,7 @@ namespace enigma
 {
     public class Correspondencia
     {
-        protected Aplicacion aplicacion;
+        public Aplicacion aplicacion { get; protected set; }
         //TODO manejo de eventos
 
         public Correspondencia()

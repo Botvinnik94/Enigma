@@ -13,7 +13,7 @@ namespace enigma
         const string abecedario = "abcdefghijklmnñopqrstuvwxyz";
         const int limiteLetras = 27;
         protected char[] input;
-        private char[] output;
+        public char[] output { get; set; }
         private int _offset;
         public int offset
         {
