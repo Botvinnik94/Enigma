@@ -133,7 +133,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(425, 32);
+            this.label6.Location = new System.Drawing.Point(419, 32);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(10, 13);
             this.label6.TabIndex = 5;
@@ -304,7 +304,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(152, 437);
+            this.label25.Location = new System.Drawing.Point(153, 406);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(12, 13);
             this.label25.TabIndex = 24;
@@ -313,7 +313,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(227, 437);
+            this.label26.Location = new System.Drawing.Point(228, 406);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(12, 13);
             this.label26.TabIndex = 25;
@@ -322,7 +322,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(300, 437);
+            this.label27.Location = new System.Drawing.Point(301, 406);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(12, 13);
             this.label27.TabIndex = 26;
@@ -392,7 +392,7 @@
             // 
             this.cbbG.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbG.FormattingEnabled = true;
-            this.cbbG.Location = new System.Drawing.Point(24, 167);
+            this.cbbG.Location = new System.Drawing.Point(24, 157);
             this.cbbG.Name = "cbbG";
             this.cbbG.Size = new System.Drawing.Size(42, 21);
             this.cbbG.TabIndex = 33;
@@ -402,7 +402,7 @@
             // 
             this.cbbH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbH.FormattingEnabled = true;
-            this.cbbH.Location = new System.Drawing.Point(102, 167);
+            this.cbbH.Location = new System.Drawing.Point(102, 157);
             this.cbbH.Name = "cbbH";
             this.cbbH.Size = new System.Drawing.Size(42, 21);
             this.cbbH.TabIndex = 34;
@@ -412,7 +412,7 @@
             // 
             this.cbbI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbI.FormattingEnabled = true;
-            this.cbbI.Location = new System.Drawing.Point(176, 167);
+            this.cbbI.Location = new System.Drawing.Point(176, 157);
             this.cbbI.Name = "cbbI";
             this.cbbI.Size = new System.Drawing.Size(42, 21);
             this.cbbI.TabIndex = 35;
@@ -422,7 +422,7 @@
             // 
             this.cbbJ.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbJ.FormattingEnabled = true;
-            this.cbbJ.Location = new System.Drawing.Point(251, 167);
+            this.cbbJ.Location = new System.Drawing.Point(251, 157);
             this.cbbJ.Name = "cbbJ";
             this.cbbJ.Size = new System.Drawing.Size(42, 21);
             this.cbbJ.TabIndex = 36;
@@ -432,7 +432,7 @@
             // 
             this.cbbK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbK.FormattingEnabled = true;
-            this.cbbK.Location = new System.Drawing.Point(324, 167);
+            this.cbbK.Location = new System.Drawing.Point(324, 157);
             this.cbbK.Name = "cbbK";
             this.cbbK.Size = new System.Drawing.Size(42, 21);
             this.cbbK.TabIndex = 37;
@@ -442,7 +442,7 @@
             // 
             this.cbbL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbL.FormattingEnabled = true;
-            this.cbbL.Location = new System.Drawing.Point(404, 167);
+            this.cbbL.Location = new System.Drawing.Point(404, 157);
             this.cbbL.Name = "cbbL";
             this.cbbL.Size = new System.Drawing.Size(42, 21);
             this.cbbL.TabIndex = 38;
@@ -452,7 +452,7 @@
             // 
             this.cbbM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbM.FormattingEnabled = true;
-            this.cbbM.Location = new System.Drawing.Point(24, 263);
+            this.cbbM.Location = new System.Drawing.Point(24, 252);
             this.cbbM.Name = "cbbM";
             this.cbbM.Size = new System.Drawing.Size(42, 21);
             this.cbbM.TabIndex = 39;
@@ -462,7 +462,7 @@
             // 
             this.cbbN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbN.FormattingEnabled = true;
-            this.cbbN.Location = new System.Drawing.Point(102, 263);
+            this.cbbN.Location = new System.Drawing.Point(102, 252);
             this.cbbN.Name = "cbbN";
             this.cbbN.Size = new System.Drawing.Size(42, 21);
             this.cbbN.TabIndex = 40;
@@ -472,7 +472,7 @@
             // 
             this.cbbNN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbNN.FormattingEnabled = true;
-            this.cbbNN.Location = new System.Drawing.Point(176, 263);
+            this.cbbNN.Location = new System.Drawing.Point(176, 252);
             this.cbbNN.Name = "cbbNN";
             this.cbbNN.Size = new System.Drawing.Size(42, 21);
             this.cbbNN.TabIndex = 41;
@@ -482,7 +482,7 @@
             // 
             this.cbbO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbO.FormattingEnabled = true;
-            this.cbbO.Location = new System.Drawing.Point(251, 263);
+            this.cbbO.Location = new System.Drawing.Point(251, 252);
             this.cbbO.Name = "cbbO";
             this.cbbO.Size = new System.Drawing.Size(42, 21);
             this.cbbO.TabIndex = 42;
@@ -492,7 +492,7 @@
             // 
             this.cbbP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbP.FormattingEnabled = true;
-            this.cbbP.Location = new System.Drawing.Point(324, 263);
+            this.cbbP.Location = new System.Drawing.Point(324, 252);
             this.cbbP.Name = "cbbP";
             this.cbbP.Size = new System.Drawing.Size(42, 21);
             this.cbbP.TabIndex = 43;
@@ -502,7 +502,7 @@
             // 
             this.cbbQ.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbQ.FormattingEnabled = true;
-            this.cbbQ.Location = new System.Drawing.Point(404, 263);
+            this.cbbQ.Location = new System.Drawing.Point(404, 252);
             this.cbbQ.Name = "cbbQ";
             this.cbbQ.Size = new System.Drawing.Size(42, 21);
             this.cbbQ.TabIndex = 44;
@@ -512,7 +512,7 @@
             // 
             this.cbbR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbR.FormattingEnabled = true;
-            this.cbbR.Location = new System.Drawing.Point(24, 361);
+            this.cbbR.Location = new System.Drawing.Point(24, 352);
             this.cbbR.Name = "cbbR";
             this.cbbR.Size = new System.Drawing.Size(42, 21);
             this.cbbR.TabIndex = 45;
@@ -522,7 +522,7 @@
             // 
             this.cbbS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbS.FormattingEnabled = true;
-            this.cbbS.Location = new System.Drawing.Point(102, 361);
+            this.cbbS.Location = new System.Drawing.Point(102, 352);
             this.cbbS.Name = "cbbS";
             this.cbbS.Size = new System.Drawing.Size(42, 21);
             this.cbbS.TabIndex = 46;
@@ -532,7 +532,7 @@
             // 
             this.cbbT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbT.FormattingEnabled = true;
-            this.cbbT.Location = new System.Drawing.Point(176, 361);
+            this.cbbT.Location = new System.Drawing.Point(176, 352);
             this.cbbT.Name = "cbbT";
             this.cbbT.Size = new System.Drawing.Size(42, 21);
             this.cbbT.TabIndex = 47;
@@ -542,7 +542,7 @@
             // 
             this.cbbU.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbU.FormattingEnabled = true;
-            this.cbbU.Location = new System.Drawing.Point(251, 361);
+            this.cbbU.Location = new System.Drawing.Point(251, 352);
             this.cbbU.Name = "cbbU";
             this.cbbU.Size = new System.Drawing.Size(42, 21);
             this.cbbU.TabIndex = 48;
@@ -552,7 +552,7 @@
             // 
             this.cbbV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbV.FormattingEnabled = true;
-            this.cbbV.Location = new System.Drawing.Point(324, 361);
+            this.cbbV.Location = new System.Drawing.Point(324, 352);
             this.cbbV.Name = "cbbV";
             this.cbbV.Size = new System.Drawing.Size(42, 21);
             this.cbbV.TabIndex = 49;
@@ -562,7 +562,7 @@
             // 
             this.cbbW.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbW.FormattingEnabled = true;
-            this.cbbW.Location = new System.Drawing.Point(404, 361);
+            this.cbbW.Location = new System.Drawing.Point(404, 352);
             this.cbbW.Name = "cbbW";
             this.cbbW.Size = new System.Drawing.Size(42, 21);
             this.cbbW.TabIndex = 51;
@@ -572,7 +572,7 @@
             // 
             this.cbbX.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbX.FormattingEnabled = true;
-            this.cbbX.Location = new System.Drawing.Point(139, 466);
+            this.cbbX.Location = new System.Drawing.Point(138, 435);
             this.cbbX.Name = "cbbX";
             this.cbbX.Size = new System.Drawing.Size(42, 21);
             this.cbbX.TabIndex = 52;
@@ -582,7 +582,7 @@
             // 
             this.cbbY.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbY.FormattingEnabled = true;
-            this.cbbY.Location = new System.Drawing.Point(213, 466);
+            this.cbbY.Location = new System.Drawing.Point(214, 435);
             this.cbbY.Name = "cbbY";
             this.cbbY.Size = new System.Drawing.Size(42, 21);
             this.cbbY.TabIndex = 53;
@@ -592,7 +592,7 @@
             // 
             this.cbbZ.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbZ.FormattingEnabled = true;
-            this.cbbZ.Location = new System.Drawing.Point(288, 466);
+            this.cbbZ.Location = new System.Drawing.Point(289, 435);
             this.cbbZ.Name = "cbbZ";
             this.cbbZ.Size = new System.Drawing.Size(42, 21);
             this.cbbZ.TabIndex = 54;
@@ -600,9 +600,9 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(193, 509);
+            this.btnConfirmar.Location = new System.Drawing.Point(176, 502);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirmar.Size = new System.Drawing.Size(100, 30);
             this.btnConfirmar.TabIndex = 55;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
@@ -669,7 +669,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "PlugboardView";
-            this.Text = "PlugboardView";
+            this.Text = "Plugboard";
             this.ResumeLayout(false);
             this.PerformLayout();
 

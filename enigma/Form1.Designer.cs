@@ -63,7 +63,7 @@
             this.txtInput.Location = new System.Drawing.Point(20, 340);
             this.txtInput.Multiline = true;
             this.txtInput.Name = "txtInput";
-            this.txtInput.Size = new System.Drawing.Size(504, 153);
+            this.txtInput.Size = new System.Drawing.Size(504, 124);
             this.txtInput.TabIndex = 1;
             // 
             // txtOutput
@@ -77,9 +77,10 @@
             // 
             // btnEncriptar
             // 
-            this.btnEncriptar.Location = new System.Drawing.Point(212, 509);
+            this.btnEncriptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnEncriptar.Location = new System.Drawing.Point(184, 489);
             this.btnEncriptar.Name = "btnEncriptar";
-            this.btnEncriptar.Size = new System.Drawing.Size(129, 23);
+            this.btnEncriptar.Size = new System.Drawing.Size(165, 50);
             this.btnEncriptar.TabIndex = 3;
             this.btnEncriptar.Text = "Encriptar/Desencriptar";
             this.btnEncriptar.UseVisualStyleBackColor = true;
@@ -87,9 +88,9 @@
             // 
             // btnPlugboard
             // 
-            this.btnPlugboard.Location = new System.Drawing.Point(229, 120);
+            this.btnPlugboard.Location = new System.Drawing.Point(249, 123);
             this.btnPlugboard.Name = "btnPlugboard";
-            this.btnPlugboard.Size = new System.Drawing.Size(90, 23);
+            this.btnPlugboard.Size = new System.Drawing.Size(100, 36);
             this.btnPlugboard.TabIndex = 4;
             this.btnPlugboard.Text = "Plugboard";
             this.btnPlugboard.UseVisualStyleBackColor = true;
@@ -99,9 +100,9 @@
             // 
             this.cbbRotor1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbRotor1.FormattingEnabled = true;
-            this.cbbRotor1.Location = new System.Drawing.Point(112, 33);
+            this.cbbRotor1.Location = new System.Drawing.Point(112, 35);
             this.cbbRotor1.Name = "cbbRotor1";
-            this.cbbRotor1.Size = new System.Drawing.Size(103, 21);
+            this.cbbRotor1.Size = new System.Drawing.Size(100, 21);
             this.cbbRotor1.TabIndex = 5;
             this.cbbRotor1.SelectedIndexChanged += new System.EventHandler(this.RotorChanged);
             // 
@@ -109,9 +110,9 @@
             // 
             this.cbbRotor2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbRotor2.FormattingEnabled = true;
-            this.cbbRotor2.Location = new System.Drawing.Point(249, 33);
+            this.cbbRotor2.Location = new System.Drawing.Point(249, 35);
             this.cbbRotor2.Name = "cbbRotor2";
-            this.cbbRotor2.Size = new System.Drawing.Size(92, 21);
+            this.cbbRotor2.Size = new System.Drawing.Size(100, 21);
             this.cbbRotor2.TabIndex = 6;
             this.cbbRotor2.SelectedIndexChanged += new System.EventHandler(this.RotorChanged);
             // 
@@ -119,9 +120,9 @@
             // 
             this.cbbRotor3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbRotor3.FormattingEnabled = true;
-            this.cbbRotor3.Location = new System.Drawing.Point(375, 33);
+            this.cbbRotor3.Location = new System.Drawing.Point(391, 35);
             this.cbbRotor3.Name = "cbbRotor3";
-            this.cbbRotor3.Size = new System.Drawing.Size(96, 21);
+            this.cbbRotor3.Size = new System.Drawing.Size(100, 21);
             this.cbbRotor3.TabIndex = 7;
             this.cbbRotor3.SelectedIndexChanged += new System.EventHandler(this.RotorChanged);
             // 
@@ -131,7 +132,7 @@
             this.cbbOffset1.FormattingEnabled = true;
             this.cbbOffset1.Location = new System.Drawing.Point(112, 82);
             this.cbbOffset1.Name = "cbbOffset1";
-            this.cbbOffset1.Size = new System.Drawing.Size(103, 21);
+            this.cbbOffset1.Size = new System.Drawing.Size(100, 21);
             this.cbbOffset1.TabIndex = 8;
             this.cbbOffset1.SelectedIndexChanged += new System.EventHandler(this.ChangeOffset);
             // 
@@ -139,9 +140,9 @@
             // 
             this.cbbOffset3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbOffset3.FormattingEnabled = true;
-            this.cbbOffset3.Location = new System.Drawing.Point(375, 82);
+            this.cbbOffset3.Location = new System.Drawing.Point(391, 82);
             this.cbbOffset3.Name = "cbbOffset3";
-            this.cbbOffset3.Size = new System.Drawing.Size(96, 21);
+            this.cbbOffset3.Size = new System.Drawing.Size(100, 21);
             this.cbbOffset3.TabIndex = 9;
             this.cbbOffset3.SelectedIndexChanged += new System.EventHandler(this.ChangeOffset);
             // 
@@ -151,7 +152,7 @@
             this.cbbOffset2.FormattingEnabled = true;
             this.cbbOffset2.Location = new System.Drawing.Point(249, 82);
             this.cbbOffset2.Name = "cbbOffset2";
-            this.cbbOffset2.Size = new System.Drawing.Size(92, 21);
+            this.cbbOffset2.Size = new System.Drawing.Size(100, 21);
             this.cbbOffset2.TabIndex = 10;
             this.cbbOffset2.SelectedIndexChanged += new System.EventHandler(this.ChangeOffset);
             // 
@@ -176,7 +177,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(132, 9);
+            this.label3.Location = new System.Drawing.Point(142, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 13;
@@ -185,7 +186,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(388, 9);
+            this.label4.Location = new System.Drawing.Point(418, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 14;
@@ -194,7 +195,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(277, 9);
+            this.label5.Location = new System.Drawing.Point(278, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 13);
             this.label5.TabIndex = 15;
@@ -263,7 +264,7 @@
             this.Controls.Add(this.txtInput);
             this.Controls.Add(this.lbLog);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Enigma";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
